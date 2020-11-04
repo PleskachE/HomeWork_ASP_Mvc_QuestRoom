@@ -1,0 +1,48 @@
+﻿@model QuestRoom.Models.RoomContainer
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div style="text-align:center">
+        <img src=@Model.Pictures.ToList().Find(x => x.Logo == true).Path style="width:450px; height:300px;">
+        <p style="font-size:20px; font-style:italic; color:black">Квест - @Model.Room.Name</p>
+    </div>
+    @foreach (var item in Model.Pictures)
+    {
+        if (item.Logo == false)
+        {
+            <div style="display:inline-block; margin:10px">
+                <img src=@item.Path style="width:200px; border:1px solid black" />
+            </div>
+        }
+    }
+    <hr style="background-color:red; color:red; height:2px; border:none;" />
+    <div style="width:40%; margin:10px; display:inline-block; text-align:left">
+        <ul style="list-style-type:none">
+            <li>@Model.Room.Description</li>
+            <li>Время прохождения - @Model.Room.Duration</li>
+            <li>Количество человек - @Model.Room.GroupSize</li>
+            <li>Ограничение по возрасту - @Model.Room.MinimumAge</li>
+            <li>Уровень страха - @Model.Room.LevelFear</li>
+        </ul>
+    </div>
+    <div style="width:40%; margin:5px; display:inline-block; text-align:right">
+        <ul style="list-style-type:none">
+            <li>Рейтинг - @Model.Room.Rating</li>
+            <li>Уровень страха - @Model.Room.LevelComplexity</li>
+            <li>Адрес - @Model.Room.Address</li>
+            <li>Телефон - @Model.Room.PhoneNumbers</li>
+            <li>Емейл - @Model.Room.Email</li>
+            <li>Компания - @Model.Room.Company</li>
+        </ul>
+    </div>
+</body>
+</html>
+
