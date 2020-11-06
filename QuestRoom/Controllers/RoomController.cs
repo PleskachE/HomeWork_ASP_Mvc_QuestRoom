@@ -1,11 +1,6 @@
 ﻿using QuestRoom.DB;
-using QuestRoom.DB.Model;
 using QuestRoom.Models;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace QuestRoom.Controllers
@@ -19,15 +14,19 @@ namespace QuestRoom.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            _dbContext = new MyDbContext();
+           _dbContext = new MyDbContext();
             _roomsAndPictersContainer = new RoomsAndPictersContainer(_dbContext.Rooms,
                 _dbContext.Pictures.ToList().FindAll(x => x.Logo == true));
             return View(_roomsAndPictersContainer);
         }
 
         [HttpGet]
-        public ActionResult Result(int id)
+        public ActionResult Result(int? id)
         {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
             _dbContext = new MyDbContext();
             _roomContainer = new RoomContainer()
             {

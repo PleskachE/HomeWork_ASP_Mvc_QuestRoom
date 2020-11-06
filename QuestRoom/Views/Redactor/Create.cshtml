@@ -1,0 +1,92 @@
+﻿@using QuestRoom.DB.Model;
+
+@model Room
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Комнаты", "Index", "Room")</li>
+                    <li>@Html.ActionLink("Редактор", "Index", "Redactor")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h2>Новая Квест-комната</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(model => model.Name, "Название комнаты")
+        <br />
+        @Html.EditorFor(model => model.Name)
+        <br /><br />
+        @Html.LabelFor(model => model.Description, "Описание")
+        <br />
+        @Html.EditorFor(model => model.Description)
+        <br /><br />
+        @Html.LabelFor(model => model.Duration, "Время прохождения")
+        <br />
+        @Html.EditorFor(model => model.Duration)
+        <br /><br />
+        @Html.LabelFor(model => model.GroupSize, "Количество игроков")
+        <br />
+        @Html.EditorFor(model => model.GroupSize)
+        <br /><br />
+        @Html.LabelFor(model => model.MinimumAge, "Ограничение по возрасту")
+        <br />
+        @Html.EditorFor(model => model.MinimumAge)
+        <br /><br />
+        @Html.LabelFor(model => model.Rating, "Рейтинг")
+        <br />
+        @Html.EditorFor(model => model.Rating)
+        <br /><br />
+        @Html.LabelFor(model => model.LevelComplexity, "Урвень сложности")
+        <br />
+        @Html.EditorFor(model => model.LevelComplexity)
+        <br /><br />
+        @Html.LabelFor(model => model.LevelFear, "Уровень страха")
+        <br />
+        @Html.EditorFor(model => model.LevelFear)
+        <br /><br />
+        @Html.LabelFor(model => model.Address, "Адрес")
+        <br />
+        @Html.EditorFor(model => model.Address)
+        <br /><br />
+        @Html.LabelFor(model => model.PhoneNumbers, "Телефон")
+        <br />
+        @Html.EditorFor(model => model.PhoneNumbers)
+        <br /><br />
+        @Html.LabelFor(model => model.Email, "Емейл")
+        <br />
+        @Html.EditorFor(model => model.Email)
+        <br /><br />
+        @Html.LabelFor(model => model.Company, "Компания")
+        <br />
+        @Html.EditorFor(model => model.Company)
+        <br /><br />
+        <input type="submit" value="Добавить" />
+    }
+</body>
+</html>
+

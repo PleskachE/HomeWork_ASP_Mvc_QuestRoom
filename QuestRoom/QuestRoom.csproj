@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RedactorController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="DB\Model\Picture.cs" />
     <Compile Include="DB\Model\Room.cs" />
@@ -149,7 +150,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\backgraund.jpg" />
+    <Content Include="Content\Images\backgraund.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -174,11 +175,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Room\Index.cshtml" />
     <Content Include="Views\Room\Result.cshtml" />
+    <Content Include="Views\Redactor\Update.cshtml" />
+    <Content Include="Views\Redactor\Index.cshtml" />
+    <Content Include="Views\Redactor\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
