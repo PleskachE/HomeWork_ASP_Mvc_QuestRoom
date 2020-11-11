@@ -1,7 +1,6 @@
-using QuestRoom.Models;
+using QuestRoom.App_Start;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,7 +13,7 @@ namespace QuestRoom
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new RoomsDbInitializer());
+            DependencyInjectionConfig.RegisterDependencies();
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

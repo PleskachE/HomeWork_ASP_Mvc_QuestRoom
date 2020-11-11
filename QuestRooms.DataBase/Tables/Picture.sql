@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Picture]
+(
+	[Id] INT NOT NULL IDENTITY(1,1),
+	[Path] NVARCHAR(200) NOT NULL,
+	[Logo] BIT NOT NULL,
+	[RoomId] INT NOT NULL,
+	CONSTRAINT PK_Picture PRIMARY KEY ([Id])
+)

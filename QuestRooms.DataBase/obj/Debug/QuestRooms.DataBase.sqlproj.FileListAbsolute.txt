@@ -1,0 +1,8 @@
+C:\Users\Sony\Desktop\QuestRoom\QuestRooms.DataBase\bin\Debug\QuestRooms.DataBase.dacpac
+C:\Users\Sony\Desktop\QuestRoom\QuestRooms.DataBase\obj\Debug\QuestRooms.DataBase.sqlprojAssemblyReference.cache
+C:\Users\Sony\Desktop\QuestRoom\QuestRooms.DataBase\obj\Debug\Model.xml
+C:\Users\Sony\Desktop\QuestRoom\QuestRooms.DataBase\obj\Debug\refactor.xml
+C:\Users\Sony\Desktop\QuestRoom\QuestRooms.DataBase\obj\Debug\postdeploy.sql
+C:\Users\Sony\Desktop\QuestRoom\QuestRooms.DataBase\obj\Debug\predeploy.sql
+C:\Users\Sony\Desktop\QuestRoom\QuestRooms.DataBase\obj\Debug\QuestRooms.DataBase.dll
+C:\Users\Sony\Desktop\QuestRoom\QuestRooms.DataBase\obj\Debug\QuestRooms.DataBase.pdb

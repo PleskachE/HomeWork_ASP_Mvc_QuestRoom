@@ -1,6 +1,8 @@
-﻿using System.Reflection;
+﻿using QuestRoom.App_Start;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Web;
 
 // Управление общими сведениями о сборке осуществляется следующим образом
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
@@ -33,3 +35,4 @@ using System.Runtime.InteropServices;
 // используя "*", как показано ниже:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: PreApplicationStartMethod(typeof(DependencyInjectionConfig), "Start")]

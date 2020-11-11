@@ -1,5 +1,4 @@
-﻿using QuestRoom.DB;
-using QuestRoom.Models;
+﻿using QuestRoom.Service.Absractions;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -7,17 +6,18 @@ namespace QuestRoom.Controllers
 {
     public class RoomController : Controller
     {
-        private MyDbContext _dbContext;
-        private RoomsAndPictersContainer _roomsAndPictersContainer;
-        private RoomContainer _roomContainer;
+        private IRoomService _roomService;
+
+        public RoomController(IRoomService roomService)
+        {
+            this._roomService = roomService;
+        }
 
         [HttpGet]
         public ActionResult Index()
         {
-           _dbContext = new MyDbContext();
-            _roomsAndPictersContainer = new RoomsAndPictersContainer(_dbContext.Rooms,
-                _dbContext.Pictures.ToList().FindAll(x => x.Logo == true));
-            return View(_roomsAndPictersContainer);
+            var model = _roomService.GetRooms();
+            return View(model);
         }
 
         [HttpGet]
@@ -27,13 +27,8 @@ namespace QuestRoom.Controllers
             {
                 return HttpNotFound();
             }
-            _dbContext = new MyDbContext();
-            _roomContainer = new RoomContainer()
-            {
-                Room = _dbContext.Rooms.ToList().Find(x => x.RoomId == id),
-                Pictures = _dbContext.Pictures.ToList().FindAll(x => x.RoomId == id)
-            };
-            return View(_roomContainer);
+            var model = _roomService.GetRoomById(id.Value);
+            return View(model);
         }
     }
 }

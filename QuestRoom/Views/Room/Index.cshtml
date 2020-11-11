@@ -1,6 +1,6 @@
-﻿@using QuestRoom.Models;
+﻿@using QuestRoom.Data.Entity
 
-@model RoomsAndPictersContainer
+@model IEnumerable<Room>
 @{
     Layout = null;
 }
@@ -33,11 +33,10 @@
             </div>
         </div>
     </div>
-    @foreach (var item in Model.Rooms)
+    @foreach (var item in Model)
     {
         <div style="display:inline-block; width:200px; height:100px; margin:10px; border-color:red; border-width:2px;">
-            <img src=@Model.Pictures.ToList().Find(x => x.RoomId == item.RoomId).Path style="width:200px; border:1px solid black" />
-            <p>Квест: <a href="Room/Result/@item.RoomId">@item.Name</a></p>
+            <p>Квест: <a href="Room/Result/@item.Id">@item.Name</a></p>
         </div>
     }
 </body>

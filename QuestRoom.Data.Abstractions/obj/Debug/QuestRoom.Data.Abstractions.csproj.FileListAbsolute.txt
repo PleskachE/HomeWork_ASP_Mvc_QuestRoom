@@ -1,0 +1,11 @@
+C:\Users\Sony\Desktop\QuestRoom\QuestRoom.Data.Abstractions\bin\Debug\QuestRoom.Data.Abstractions.dll
+C:\Users\Sony\Desktop\QuestRoom\QuestRoom.Data.Abstractions\bin\Debug\QuestRoom.Data.Abstractions.pdb
+C:\Users\Sony\Desktop\QuestRoom\QuestRoom.Data.Abstractions\bin\Debug\QuestRoom.Base.Abstractions.dll
+C:\Users\Sony\Desktop\QuestRoom\QuestRoom.Data.Abstractions\bin\Debug\QuestRoom.Data.Entity.dll
+C:\Users\Sony\Desktop\QuestRoom\QuestRoom.Data.Abstractions\bin\Debug\QuestRoom.Base.Abstractions.pdb
+C:\Users\Sony\Desktop\QuestRoom\QuestRoom.Data.Abstractions\bin\Debug\QuestRoom.Data.Entity.pdb
+C:\Users\Sony\Desktop\QuestRoom\QuestRoom.Data.Abstractions\obj\Debug\QuestRoom.Data.Abstractions.csprojAssemblyReference.cache
+C:\Users\Sony\Desktop\QuestRoom\QuestRoom.Data.Abstractions\obj\Debug\QuestRoom.Data.Abstractions.csproj.CoreCompileInputs.cache
+C:\Users\Sony\Desktop\QuestRoom\QuestRoom.Data.Abstractions\obj\Debug\QuestRoom.Data.Abstractions.csproj.CopyComplete
+C:\Users\Sony\Desktop\QuestRoom\QuestRoom.Data.Abstractions\obj\Debug\QuestRoom.Data.Abstractions.dll
+C:\Users\Sony\Desktop\QuestRoom\QuestRoom.Data.Abstractions\obj\Debug\QuestRoom.Data.Abstractions.pdb
