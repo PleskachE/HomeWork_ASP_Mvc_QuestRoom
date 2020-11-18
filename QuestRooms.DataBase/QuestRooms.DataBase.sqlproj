@@ -61,5 +61,7 @@
   <ItemGroup>
     <Build Include="Tables\Room.sql" />
     <Build Include="Tables\Picture.sql" />
+    <Build Include="Tables\TypeRoom.sql" />
+    <Build Include="Tables\LevelComplexity.sql" />
   </ItemGroup>
 </Project>

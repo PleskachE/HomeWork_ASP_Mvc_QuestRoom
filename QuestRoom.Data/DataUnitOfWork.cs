@@ -10,6 +10,8 @@ namespace QuestRoom.Data
 
         private IRoomRepository _roomRepository;
         private IPictureRepository _pictureRepository;
+        private ITypeRoomRepository _typeRoomRepository;
+        private ILevelComplexityRepository _levelComplexityRepository;
 
         public DataUnitOfWork(string connectionString)
         {
@@ -38,6 +40,30 @@ namespace QuestRoom.Data
                     _pictureRepository = new PictureRepository(_context);
                 }
                 return _pictureRepository;
+            }
+        }
+
+        public ITypeRoomRepository TypeRoomRepository
+        {
+            get
+            {
+                if (_typeRoomRepository == null)
+                {
+                    _typeRoomRepository = new TypeRoomRepository(_context);
+                }
+                return _typeRoomRepository;
+            }
+        }
+
+        public ILevelComplexityRepository LevelComplexityRepository
+        {
+            get
+            {
+                if (_levelComplexityRepository == null)
+                {
+                    _levelComplexityRepository = new LevelComplexityRepository(_context);
+                }
+                return _levelComplexityRepository;
             }
         }
 

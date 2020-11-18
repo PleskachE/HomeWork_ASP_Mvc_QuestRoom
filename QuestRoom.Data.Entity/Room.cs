@@ -1,4 +1,5 @@
 ﻿using QuestRoom.Base.Abstractions;
+
 using System.Collections.Generic;
 
 namespace QuestRoom.Data.Entity
@@ -14,9 +15,9 @@ namespace QuestRoom.Data.Entity
         public string PhoneNumbers { get; set; }
         public string Email { get; set; }
         public string Company { get; set; }
-        public string Rating { get; set; }
-        public string LevelComplexity { get; set; }
-        public string LevelFear { get; set; }
+        public double Rating { get; set; }
+        public int LevelComplexityId { get; set; }
+        public int TypeRoomId { get; set; }
         public IEnumerable<Picture> Pictures { get; set; }
     }
 }

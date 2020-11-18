@@ -146,6 +146,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryRoomsModel.cs" />
+    <Compile Include="Models\RedactorRoomModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
+    <Compile Include="Models\RoomsAndPictureModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +164,12 @@
     <Content Include="Content\Images\backgraund.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="App_Code\HomeHelper.cshtml" />
+    <Content Include="App_Code\RoomHelper.cshtml" />
+    <Content Include="App_Code\RedactorIndexHelper.cshtml" />
+    <Content Include="App_Code\TypeRoomHelper.cshtml" />
+    <Content Include="App_Code\LevelComplexityHelper.cshtml" />
+    <Content Include="App_Code\SortHelper.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -184,14 +194,14 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Room\Index.cshtml" />
-    <Content Include="Views\Room\Result.cshtml" />
     <Content Include="Views\Redactor\Update.cshtml" />
     <Content Include="Views\Redactor\Index.cshtml" />
     <Content Include="Views\Redactor\Create.cshtml" />
+    <Content Include="Views\Room\TypeRoom.cshtml" />
+    <Content Include="Views\Room\LevelComplexity.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,6 +1,9 @@
-﻿@model QuestRoom.Models.RoomContainer
+﻿@using QuestRoom.Models;
+
+@model RedactorRoomModel
+
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -12,105 +15,83 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Комнаты", "Index", "Room")</li>
-                    <li>@Html.ActionLink("Редактор", "Index", "Redactor")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <div>
         <h3>Форма изменения комнаты</h3>
         @using (Html.BeginForm("Update", "Redactor", FormMethod.Post))
         {
-            <fieldset>
-                <p>
-                    @Html.LabelFor(m => m.Room.RoomId, "Id комнаты")
-                    <br />
-                    @Html.EditorFor(m => m.Room.RoomId)
-                </p>
-                <p>
-                    @Html.LabelFor(m => m.Room.Name, "Название квеста")
-                    <br />
-                    @Html.EditorFor(m => m.Room.Name)
-                </p>
-                <p>
-                    @Html.LabelFor(m => m.Room.MinimumAge, "Ограничение по возрасту")
-                    <br />
-                    @Html.EditorFor(m => m.Room.MinimumAge)
+    <fieldset>
+        <p>
+            @Html.HiddenFor(m => m.Room.Id)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Room.Name, "Название квеста")
+            <br />
+            @Html.EditorFor(m => m.Room.Name)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Room.MinimumAge, "Ограничение по возрасту")
+            <br />
+            @Html.EditorFor(m => m.Room.MinimumAge)
 
-                </p>
-                <p>
-                    @Html.LabelFor(m => m.Room.Description, "Описание")
-                    <br />
-                    @Html.EditorFor(m => m.Room.Description)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Room.Description, "Описание")
+            <br />
+            @Html.EditorFor(m => m.Room.Description)
 
-                </p>
-                <p>
-                    @Html.LabelFor(m => m.Room.Duration, "Время прохождения")
-                    <br />
-                    @Html.EditorFor(m => m.Room.Duration)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Room.Duration, "Время прохождения")
+            <br />
+            @Html.EditorFor(m => m.Room.Duration)
 
-                </p>
-                <p>
-                    @Html.LabelFor(m => m.Room.GroupSize, "Количество игроков")
-                    <br />
-                    @Html.EditorFor(m => m.Room.GroupSize)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Room.GroupSize, "Количество игроков")
+            <br />
+            @Html.EditorFor(m => m.Room.GroupSize)
 
-                </p>
-                <p>
-                    @Html.LabelFor(m => m.Room.Rating, "Рейтинг")
-                    <br />
-                    @Html.EditorFor(m => m.Room.Rating)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Room.TypeRoomId, "Тип комнаты")
+            <br />
+            @Html.DropDownListFor(m => m.Room.TypeRoomId, Model.TypeRoomList as SelectList)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Room.TypeRoomId, "Уровень сложности")
+            <br />
+            @Html.DropDownListFor(m => m.Room.LevelComplexityId, Model.LevelComplexityList as SelectList)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Room.Rating, "Рейтинг")
+            <br />
+            @Html.EditorFor(m => m.Room.Rating)
 
-                </p>
-                <p>
-                    @Html.LabelFor(m => m.Room.LevelComplexity, "Уровень сложности")
-                    <br />
-                    @Html.EditorFor(m => m.Room.LevelComplexity)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Room.PhoneNumbers, "Номер телефона")
+            <br />
+            @Html.EditorFor(m => m.Room.PhoneNumbers)
 
-                </p>
-                <p>
-                    @Html.LabelFor(m => m.Room.LevelFear, "Уровень страха")
-                    <br />
-                    @Html.EditorFor(m => m.Room.LevelFear)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Room.Company, "Компания")
+            <br />
+            @Html.EditorFor(m => m.Room.Company)
 
-                </p>
-                <p>
-                    @Html.LabelFor(m => m.Room.PhoneNumbers, "Номер телефона")
-                    <br />
-                    @Html.EditorFor(m => m.Room.PhoneNumbers)
-
-                </p>
-                <p>
-                    @Html.LabelFor(m => m.Room.Company, "Компания")
-                    <br />
-                    @Html.EditorFor(m => m.Room.Company)
-
-                </p>
-                <p>
-                    @Html.LabelFor(m => m.Room.Address, "Адрес")
-                    <br />
-                    @Html.EditorFor(m => m.Room.Address)
-                </p>
-                <p>
-                    @Html.LabelFor(m => m.Room.Email, "Email")
-                    <br />
-                    @Html.EditorFor(m => m.Room.Email)
-                </p>
-                <p><input type="submit" value="Отправить" /></p>
-            </fieldset>
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Room.Address, "Адрес")
+            <br />
+            @Html.EditorFor(m => m.Room.Address)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Room.Email, "Email")
+            <br />
+            @Html.EditorFor(m => m.Room.Email)
+        </p>
+        <p><input type="submit" value="Изменить" /></p>
+    </fieldset>
         }
     </div>
 </body>

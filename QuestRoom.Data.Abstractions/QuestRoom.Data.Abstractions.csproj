@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="IDataUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ILevelComplexityRepository.cs" />
     <Compile Include="Repositories\IPictureRepository.cs" />
     <Compile Include="Repositories\IRoomRepository.cs" />
+    <Compile Include="Repositories\ITypeRoomRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuestRoom.Base.Abstractions\QuestRoom.Base.Abstractions.csproj">

@@ -1,0 +1,14 @@
+﻿@using QuestRoom.Models
+
+@helper HtmlList(RoomsAndPictureModel model)
+{
+    foreach (var item in model.RoomService.GetRooms())
+    {
+    <div style="display:inline-block; margin:10px">
+        <img src=@model.PictureService.GetPictures().ToList().Find(x => x.RoomId == item.Id & x.Logo==true).Path style="width:200px; border:1px solid black" />
+        <div style="width:200px; height:100px; margin:10px; border-color:red; border-width:2px;">
+            <p>Квест: <a href="Room/Index/@item.Id">@item.Name</a></p>
+        </div>
+    </div>
+    }
+}

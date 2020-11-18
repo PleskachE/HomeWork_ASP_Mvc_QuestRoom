@@ -53,6 +53,14 @@ namespace QuestRoom.App_Start
                 Bind<IPictureService>()
                     .To<PictureService>()
                     .InRequestScope();
+
+                Bind<ITypeRoomService>()
+                    .To<TypeRoomService>()
+                    .InRequestScope();
+
+                Bind<ILevelComplexityService>()
+                    .To<LevelComplexityService>()
+                    .InRequestScope();
             }
         }
     }

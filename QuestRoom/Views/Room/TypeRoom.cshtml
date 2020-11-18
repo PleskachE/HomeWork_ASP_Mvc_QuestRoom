@@ -1,0 +1,22 @@
+﻿@using QuestRoom.Models
+
+@model CategoryRoomsModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @SortHelper.HtmlList(Model)
+</body>
+</html>
+

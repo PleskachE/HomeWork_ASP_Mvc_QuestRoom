@@ -1,7 +1,16 @@
-﻿@{
-    ViewBag.Title = "Квест-Комнаты в твоём городе!";
-}
+﻿@using QuestRoom.Models
 
+@model RoomsAndPictureModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@HomeHelper.HtmlList(Model)
 <div>
-    <img src="~/Content/Images/backgraund.jpg" height="100%" width="100%"/>
+    <p>Вы так же можете выбрать комнату по следующим типам:</p>
+    <p>По жанру квест-комнаты:</p>
+    @TypeRoomHelper.HtmlList(Model)
+    <p>По уровню сложности квеста:</p>
+    @LevelComplexityHelper.HtmlList(Model)
 </div>
+
+

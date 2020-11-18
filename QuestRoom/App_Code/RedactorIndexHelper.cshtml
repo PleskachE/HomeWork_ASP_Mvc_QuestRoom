@@ -1,0 +1,11 @@
+﻿@using QuestRoom.Models
+
+@helper HtmlList(RoomsAndPictureModel model)
+{
+    foreach (var item in model.RoomService.GetRooms())
+    {
+        <div>
+            <p style="font-size:20px">Квест - @item.Name<a href="Redactor/Update/@item.Id" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> Редактировать</a> <a href="Redactor/Delete/@item.Id" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> Удалить</a></p>
+        </div>
+    }
+}

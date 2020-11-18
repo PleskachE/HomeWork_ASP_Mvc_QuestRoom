@@ -17,6 +17,8 @@ namespace QuestRoom.Data
 
             modelBuilder.Entity<Room>().ToTable(nameof(Room));
             modelBuilder.Entity<Picture>().ToTable(nameof(Picture));
+            modelBuilder.Entity<TypeRoom>().ToTable(nameof(TypeRoom));
+            modelBuilder.Entity<LevelComplexity>().ToTable(nameof(LevelComplexity));
         }
     }
 }

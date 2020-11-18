@@ -55,8 +55,10 @@
     <Compile Include="DataDbContext.cs" />
     <Compile Include="DataUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\LevelComplexityRepository.cs" />
     <Compile Include="Repositories\PictureRepository.cs" />
     <Compile Include="Repositories\RoomRepository.cs" />
+    <Compile Include="Repositories\TypeRoomRepository.cs" />
     <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -10,8 +10,8 @@
 	[PhoneNumbers] NVARCHAR(50),
 	[Email] NVARCHAR(50),
 	[Company] NVARCHAR(50),
-	[Rating] NVARCHAR(50),
-	[LevelComplexity] NVARCHAR(50),
-	[LevelFear] NVARCHAR(50),
+	[Rating] FLOAT,
+	[LevelComplexityId] INT NOT NULL,
+	[TypeRoomId] INT NOT NULL,
 	CONSTRAINT PK_Room PRIMARY KEY ([Id])
 )

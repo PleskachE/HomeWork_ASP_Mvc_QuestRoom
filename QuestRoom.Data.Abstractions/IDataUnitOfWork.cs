@@ -8,5 +8,7 @@ namespace QuestRoom.Data.Abstractions
         IRoomRepository RoomRepository { get; }
 
         IPictureRepository PictureRepository { get; }
+        ITypeRoomRepository TypeRoomRepository { get; }
+        ILevelComplexityRepository LevelComplexityRepository { get; }
     }
 }

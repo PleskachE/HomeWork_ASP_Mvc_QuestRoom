@@ -1,8 +1,8 @@
-﻿@using QuestRoom.Data.Entity
+﻿@using QuestRoom.Models
 
-@model IEnumerable<Room>
+@model RoomModel
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -15,29 +15,30 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Комнаты", "Index", "Room")</li>
-                    <li>@Html.ActionLink("Редактор", "Index", "Redactor")</li>
-                </ul>
-            </div>
-        </div>
+    <div style="text-align:center">
+        <img src=/@Model.Room.Pictures.ToList().Find(x => x.Logo == true).Path style="width:450px; height:300px;">
+        <p style="font-size:20px; font-style:italic; color:black">Квест - @Model.Room.Name</p>
     </div>
-    @foreach (var item in Model)
-    {
-        <div style="display:inline-block; width:200px; height:100px; margin:10px; border-color:red; border-width:2px;">
-            <p>Квест: <a href="Room/Result/@item.Id">@item.Name</a></p>
-        </div>
-    }
+    @RoomHelper.HtmlList(Model.Room.Pictures)
+    <hr style="background-color:red; color:red; height:2px; border:none;" />
+    <div style="width:40%; margin:10px; display:inline-block; text-align:left">
+        <ul style="list-style-type:none">
+            <li>@Model.Room.Description</li>
+            <li>Время прохождения - @Model.Room.Duration</li>
+            <li>Количество человек - @Model.Room.GroupSize</li>
+            <li>Ограничение по возрасту - @Model.Room.MinimumAge</li>
+            <li>Тип квеста - @Model.TypeRoom.Name</li>
+        </ul>
+    </div>
+    <div style="width:40%; margin:5px; display:inline-block; text-align:right">
+        <ul style="list-style-type:none">
+            <li>Рейтинг - @Model.Room.Rating</li>
+            <li>Уровень сложности - @Model.LevelComplexity.Name</li>
+            <li>Адрес - @Model.Room.Address</li>
+            <li>Телефон - @Model.Room.PhoneNumbers</li>
+            <li>Емейл - @Model.Room.Email</li>
+            <li>Компания - @Model.Room.Company</li>
+        </ul>
+    </div>
 </body>
 </html>

@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LevelComplexity.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
+    <Compile Include="TypeRoom.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuestRoom.Base.Abstractions\QuestRoom.Base.Abstractions.csproj">
